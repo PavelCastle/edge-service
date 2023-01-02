@@ -57,6 +57,19 @@ spring:
               maxBackoff: 500ms
               factor: 2
               basedOnPreviousValue: false
+  config:
+    import: "optional:configserver:"
+    cloud:
+      config:
+        uri: http://localhost:8888
+        request-read-timeout: 5000
+        request-connect-timeout: 5000
+        fail-fast: false
+        retry:
+          max-interval: 2000
+          max-attempts: 6
+          initial-interval: 1000
+          multiplier: 1.1
   data:
     redis:
       host: localhost
