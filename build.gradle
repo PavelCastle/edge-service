@@ -32,6 +32,8 @@ dependencies {
     // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos
 //    runtimeOnly 'io.netty:netty-resolver-dns-native-macos:4.1.86.Final:osx-aarch_64'
      runtimeOnly 'io.netty:netty-resolver-dns-native-macos:4.1.79.Final:osx-aarch_64'
+    runtimeOnly 'io.github.resilience4j:resilience4j-micrometer'
+    runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
