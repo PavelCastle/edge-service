@@ -117,13 +117,16 @@ resilience4j:
 logging:
   group:
     circuitbreaker: io.github.resilience4j, org.springframework.cloud.circuitbreaker
-  level: info
+  level:
+    circuitbreaker: info
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus
+        include: configprops, env, gateway, health, heapdump, info, loggers, mappings, prometheus
   endpoint:
     health:
       show-details: always
